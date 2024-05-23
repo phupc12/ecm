@@ -31,7 +31,7 @@ get_header();
         <img src="<?php echo get_template_directory_uri();?>/img/slider11.jpg" alt="slider1" class="img-tieude" >
       </div>
       <div class="col-sm-12 col-md-12 col-lg-8 about-us" data-aos="fade-left">
-        <h3><span>Tầm nhìn</span><span> sứ mệnh</span></h3>
+        <h3>Tầm nhìn sứ mệnh</h3>
         <p>Chúng tôi tự hào là đại lý PHAN KHANG HOME - NHÀ PHÂN PHỐI ĐỘC QUYỀN
             WATERTEC TẠI VIỆT NAM. WATERTEC là công ty Malaysia đầu tiên dẫn đầu trong  các phát minh và sản xuất van, vòi & phụ kiện nhựa ở Châu Á. Vòi nhựa của các phát minh và sản xuất van, vòi & phụ kiện nhựa ở Châu Á. Vòi nhựa của
             WATERTEC được làm bằng nhựa cao cấp đã qua xử lý với bảo hành lên đến 10  

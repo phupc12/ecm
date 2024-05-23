@@ -8,6 +8,12 @@
  *
  * @package julie-two
  */
+if (!session_id()) {
+	session_start();
+}
+
+$cart_item_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+
 
 ?>
 <!doctype html>
@@ -99,18 +105,23 @@ $menuItems = [
 						<a class="p-1"href="https://www.youtube.com/" target="__blank"><i class="fa-brands fa-youtube"></i></a>
 				</div> -->
 			<!-- </div> -->
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">				
-					<ul id="primary-menu" class="navbar-nav me-auto mb-2 mb-lg-0 ">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul id="primary-menu" class="navbar-nav me-auto mb-2 mb-lg-0">
 						<?php foreach ($menuItems as $menuItem): ?>
-							<li class="nav-item menu">
-								<a  style="color:white" class="nav-link <?php echo preg_match($menuItem['prefix'], $current_url)? 'active': ''; ?>" href='<?php echo $menuItem['link']; ?>'><?php echo $menuItem['text']; ?></a>
+							<li class="nav-item">
+								<a class="nav-link <?php echo preg_match($menuItem['prefix'], $current_url)
+									? 'active'
+									: ''; ?>" href='<?php echo $menuItem[
+										'link'
+									]; ?>'><?php echo $menuItem['text']; ?></a>
 							</li>
 						<?php endforeach; ?>
 					</ul>
 					<div id="header-social" class="d-flex flex-row">
-						<a style="" href="/gio-hang" ><i class="fa-solid fa-cart-shopping"></i></a>
-					</div>
-				</div>
+            <a class="p-1" href="/gio-hang"><i class="fa-solid fa-cart-shopping"></i></a>
+            <span id="cart-count" data-item-count="<?php echo $cart_item_count; ?>"></span>
+        </div>
+						</div>
 		</div>
 	</nav>
 </header>
